@@ -1,0 +1,31 @@
+.view {
+    display: flex;
+    align-items: center;
+}
+
+.selected-date {
+    font-size: 35px;
+    line-height: 1;
+    padding-bottom: 32px;
+}
+
+.arrow-btn {
+    height: 30px
+}
+
+.sidenav-item .nav-link {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.sidenav-item a {
+    text-align: center;
+}
+
+.sidenav-item {
+    /* padding: 32px; */
+}
+
+.navbar-toggler:focus {
+    box-shadow: none!important;
+}

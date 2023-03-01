@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+  </head>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.styles.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
+  <body>
+    <nav class="navbar navbar-light" style="height: 100px;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Your Logo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-offcanvas" aria-controls="navbar-offcanvas" style="border: none; outline: none;">
+          <span class="navbar-toggler-icon" style="font-size: 30px;"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="navbar-offcanvas" aria-labelledby="navbar-offcanvas-label">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="navbar-offcanvas-label">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <button id="toggle-theme" class="btn btn-primary">Toggle Theme</button>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid d-flex px-0">
+      <div style="width: 120px;">
+        <ul class="nav flex-column d-flex flex-column justify-content-evenly" style="height: 90vh;">
+          <li class="sidenav-item nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+          </li>
+          <li class="sidenav-item nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="sidenav-item nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="sidenav-item nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="sidenav-item nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+      </div>
+      <div style="width: 90%;" class="pt-3">
+        <div class="container-fluid pt-4 align-self-end w-100">
+          <div class="row d-flex justify-content-between py-0 px-4">
+            <div class="col-4 d-flex align-items-center justify-content-start" style="height: 90%">
+              <h1 class="h2">Dashboard</h1>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4 d-flex justify-content-end" style="height: 90%"> 
+              <button class="btn-primary btn">
+                <i class="fas fa-plus"></i>
+              </button>
+              <select
+              class="time-view-select form-select" style="width: 65%;"
+              aria-label="Default select example"
+            >
+              <option value="day" selected>Today's View</option>
+              <option value="week">Weekly View</option>
+              <option value="month">Monthly View</option>
+              <option value="year">Yearly View</option>
+            </select>
+          </div>
+          </div>
+        </div>
+    
+        <hr class="mt-0">
+        <div id="dashboard ">
+          <div class="view w-auto justify-content-evenly text-center" id="day-view">
+            <!-- <h2>Day view</h2> -->
+            <button id="prev-day" class="arrow-btn prev-btn"></button>
+            <div class="selected-date h2"></div>
+            <button id="next-day" class="arrow-btn next-btn"></button>
+          </div>
+          <div class="view w-auto justify-content-evenly text-center" id="week-view">
+            <!-- <h2>Week view</h2> -->
+            <button id="prev-week" class="arrow-btn prev-btn"></button>
+            <div class="selected-date h2"></div>
+            <button id="next-week" class="arrow-btn next-btn"></button>
+          </div>
+          <div class="view w-auto justify-content-evenly text-center" id="month-view">
+            <!-- <h2>Month view</h2> -->
+            <button id="prev-month" class="arrow-btn prev-btn"></button>
+            <div class="selected-date h2"></div>
+            <button id="next-month" class="arrow-btn next-btn"></button>
+          </div>
+          <div class="view w-auto justify-content-evenly text-center" id="year-view">
+            <!-- <h2>Year view</h2> -->
+            <button id="prev-year" class="arrow-btn prev-btn"></button>
+            <div class="selected-date h2"></div>
+            <button id="next-year" class="arrow-btn next-btn"></button>
+          </div>
+        </div>
+        <div class="w-100">
+          <div class="container-fluid">
+            <div class="row d-flex justify-content-evenly h-100">
+              <div class="col-7">col-7</div>
+              <div class="col-4">col-4</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  
+<script>
+  const prevBtns = document.querySelectorAll('.prev-btn');
+prevBtns.forEach((btn) => {
+  btn.innerHTML = '<i class="fas fa-arrow-left"></i>'
+});
+
+const nextBtns = document.querySelectorAll('.next-btn');
+nextBtns.forEach((btn) => {
+  btn.innerHTML = '<i class="fas fa-arrow-right"></i>'
+});
+
+// color changer
+// Select the html element
+const htmlElement = document.querySelector("html");
+
+// Function to toggle between light and dark mode
+function toggleTheme() {
+  if (htmlElement.getAttribute("data-bs-theme") === "light") {
+    htmlElement.setAttribute("data-bs-theme", "dark");
+    localStorage.setItem("theme", "dark"); // save the chosen theme to local storage
+  } else {
+    htmlElement.setAttribute("data-bs-theme", "light");
+    localStorage.setItem("theme", "light"); // save the chosen theme to local storage
+  }
+}
+
+// Load the saved theme from local storage
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  htmlElement.setAttribute("data-bs-theme", savedTheme);
+}
+
+// Call the function when the button is clicked
+const themeToggleBtn = document.querySelector("#toggle-theme");
+themeToggleBtn.addEventListener("click", toggleTheme);
+
+
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/19b6f885a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
+  </body>
+</html>

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/assets/css/bootstrap.styles.css">
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <body>
-    <nav class="navbar navbar-light p-0" style="height: 100px;">
+    <nav class="navbar bg-second p-0" style="height: 100px;">
       <div class="container-fluid h-100 px-0 h-100" style="position: relative;">
         <div class="level p-0 m-0 h-100" style="width: 20%;">
           <a class="navbar-brand bg-primary d-flex justify-content-center align-items-center" href="#" style="height: 100%; width: 100%;">Level Area</a>
@@ -44,21 +44,56 @@
     </nav>
     <div class="container-fluid d-flex px-0">
       <div style="width: 120px;">
-        <ul class="nav flex-column d-flex flex-column justify-content-evenly" style="height: 90vh;">
+        <ul class="nav flex-column d-flex flex-column justify-content-evenly bg-second" style="height: 90vh;">
           <li class="sidenav-item nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Active</a>
+            <a class="nav-link" href="/">
+              <h2>
+                <i class="fas fa-pen h2"></i>
+              </h2>
+              <h5>
+                Journal
+              </h5>
+            </a>
           </li>
           <li class="sidenav-item nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link active" href="/dashboard/day/">
+              <h2>
+                <i class="far fa-check-circle h2"></i>
+              </h2>
+              <h5>
+                Dashboard
+              </h5>
+            </a>
           </li>
           <li class="sidenav-item nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/">
+              <h2>
+                <i class="fas fa-list h2"></i>
+              </h2>
+              <h5>
+                All Goals
+              </h5>
+            </a>
           </li>
           <li class="sidenav-item nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/">
+              <h2>
+                <i class="fas fa-trophy h2"></i>
+              </h2>
+              <h5>
+                Challenges
+              </h5>
+            </a>
           </li>
           <li class="sidenav-item nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/">
+              <h2>
+                <i class="fas fa-chart-pie h2"></i>
+              </h2>
+              <h5>
+                Stats
+              </h5>
+            </a>
           </li>
         </ul>
       </div>
@@ -70,7 +105,8 @@
             </div>
             <div class="col-4"></div>
             <div class="col-4 d-flex justify-content-end" style="height: 90%"> 
-              <button class="btn-primary btn">
+              <button class="btn-primary btn" data-bs-toggle="modal"
+              data-bs-target="#addGoalModal">
                 <i class="fas fa-plus"></i>
               </button>
               <select
@@ -116,7 +152,7 @@
         <div class="w-100 pt-3">
           <div class="container-fluid">
             <div class="row d-flex justify-content-evenly h-100">
-              <div class="col-6 dash-column text-center bg-three">
+              <div class="col-6 dash-column text-center bg-second">
                 <div class="day-content container hide">
                   <section class="time-content">
                     <ul class="nav nav-pills nav nav-pills d-flex justify-content-evenly align-items-center">
@@ -153,14 +189,153 @@
                 </section>
                  </div>
               </div>
-              <div class="col-4 dash-column text-center bg-three">col-4</div>
+              <div class="col-4 dash-column text-center bg-second">col-4</div>
             </div>
             
           </div>
         </div>
       </div>
     </div>
-   
+
+        <!-- Modal -->
+        <div
+        class="modal fade"
+        id="addGoalModal"
+        tabindex="-1"
+        aria-labelledby="addGoalModal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="addGoalModalLabel">Modal</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body pick-goal-modal">
+              <div class="pick-goal-container container-fluid">
+                <div class="row">
+                  <div class="col-md-4 modal-nav-col">
+                    <div class="row">
+                      <h2>Pick One</h2>
+                    </div>
+                    <hr class="in-between" />
+                    <div class="row">
+                      <div class="list-group" id="list-tab" role="tablist">
+                        <a
+                          class="list-group-item list-group-item-action"
+                          id="list-home-list"
+                          data-bs-toggle="list"
+                          href="#list-home"
+                          role="tab"
+                          aria-controls="aquire-wealth"
+                          >Aquire Wealth</a
+                        >
+                        <a
+                          class="list-group-item list-group-item-action"
+                          id="list-profile-list"
+                          data-bs-toggle="list"
+                          href="#list-profile"
+                          role="tab"
+                          aria-controls="get-fit"
+                          >Get Fit</a
+                        >
+                        <a
+                          class="list-group-item list-group-item-action"
+                          id="list-messages-list"
+                          data-bs-toggle="list"
+                          href="#list-messages"
+                          role="tab"
+                          aria-controls="eat-healthy"
+                          >Eat Healthy</a
+                        >
+                        <a
+                          class="list-group-item list-group-item-action"
+                          id="inner-peace-list"
+                          data-bs-toggle="list"
+                          href="#inner-peace"
+                          role="tab"
+                          aria-controls="inner-peace"
+                          >Find Inner Peace</a
+                        >
+                        <a
+                          class="list-group-item list-group-item-action"
+                          id="inner-the-boss"
+                          data-bs-toggle="list"
+                          href="#the-boss"
+                          role="tab"
+                          aria-controls="the-boss"
+                          >Appease the boss</a
+                        >
+                        <a
+                          class="list-group-item list-group-item-action"
+                          id="inner-the-teacher"
+                          data-bs-toggle="list"
+                          href="#the-teacher"
+                          role="tab"
+                          aria-controls="the-teacher"
+                          >Appease the teacher</a
+                        >
+                        <a
+                          class="list-group-item list-group-item-action"
+                          id="heal-your-brain"
+                          data-bs-toggle="list"
+                          href="#heal-your-brain"
+                          role="tab"
+                          aria-controls="heal-your-brain"
+                          >Heal Your Brain</a
+                        >
+                        <button
+                          type="button"
+                          class="btn btn-warning add-your-own-goal-btn"
+                        >
+                          Add Your Own +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 ms-auto">
+                    <div
+                      class="row d-flex justify-content-center align-items-center"
+                    >
+                      <div class="input-group">
+                        <div class="form-outline">
+                          <input
+                            id="search-input"
+                            type="search"
+                            id="form1"
+                            class="form-control"
+                          />
+                        </div>
+                        <button
+                          id="search-button"
+                          type="button"
+                          class="btn btn-primary primary-color"
+                        >
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="row d-flex justify-content-center align-items-center goal-results"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="container-fluid add-goal-container d-none">
+                Add Goal
+              </div>
+            </div>
+            <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-warning add-your-own-goal-btn">Add Your Own +</button>
+          </div> -->
+          </div>
+        </div>
+      </div>
   
 <script>
 // color changer
@@ -184,12 +359,13 @@ localStorage.setItem('theme', theme);
         if (toggleBgColor.checked) {
             setTheme('dark');
             document.documentElement.style.setProperty('--main-color', 'black');
-            document.documentElement.style.setProperty('--second-color', '#212529');
+            document.documentElement.style.setProperty('--second-color', '#121212');
+            document.documentElement.style.setProperty('--third-color', '#212529');
           } else {
             setTheme('light');
-            document.documentElement.style.setProperty('--main-color', 'white');
-            document.documentElement.style.setProperty('--second-color', '#f8f9fa');
-            
+            document.documentElement.style.setProperty('--main-color', '#e4e4e4');
+            document.documentElement.style.setProperty('--second-color', '#F5F5F5');
+            document.documentElement.style.setProperty('--third-color', 'white');
           }
     }
 
@@ -212,7 +388,7 @@ themeChanger()
       src="https://kit.fontawesome.com/19b6f885a9.js"
       crossorigin="anonymous"
     ></script>
-    <script src="/assets/js/colorMode.js"></script>
+    <script src="/assets/js/sideNav.js"></script>
     <script src="/assets/js/timeframe-content.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/scripts.js"></script>

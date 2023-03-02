@@ -22,7 +22,7 @@ setWeekView(currentDate);
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/dashboard.html");
+  res.json("this is working and will be something");
 });
 
 app.get("/current-date", (req, res) => {
@@ -71,9 +71,9 @@ app.get('/dashboard/year/', (req, res) => {
 });
 
 // Render the index page for the root route
-app.get("/", (req, res) => {
-  res.render("index");
-});
+// app.get("/", (req, res) => {
+//   res.render("index");
+// });
 
 // Start the server
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));

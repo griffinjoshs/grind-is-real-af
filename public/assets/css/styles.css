@@ -13,7 +13,7 @@
     filter: invert(100%);
   }
   
-  .bg-three {
+  .bg-second {
     background-color:var(--second-color) !important;
   }
   
@@ -39,7 +39,7 @@
 
 .sidenav-item .nav-link {
     width: 100%;
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 .sidenav-item a {
@@ -52,4 +52,50 @@
 
 .navbar-toggler:focus {
     box-shadow: none!important;
+}
+
+.sidenav-item .active {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .sidenav-item:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .sidenav-item h5 {
+    font-size: 15px;
+  }
+
+  /* modal */
+  .pick-goal-modal {
+    padding: 20px 0;
+    border: none;
+}
+
+.pick-goal-modal .list-group-item {
+    border: none;
+}
+
+.list-group-item {
+    border-bottom-right-radius: none!important;
+    border-bottom-left-radius: none!important;
+}
+
+.modal-nav-col h2 {
+    font-size: 20px;
+}
+
+.in-between {
+    margin: 5px;
+    border-top: var(--bs-border-width) solid;
+}
+
+.open-goal-modal-btn {
+    width: 40px;
+}
+
+.add-your-own-goal-btn {
+    margin: 15px 0;
 }

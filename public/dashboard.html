@@ -44,73 +44,21 @@
     </nav>
     <div class="container-fluid d-flex px-0 dashboard-page-container">
       <div class="side-navbar-container">
-        <ul class="nav side-navbar d-flex justify-content-evenly bg-second flex-nowrap">
-          <li class="sidenav-item nav-item">
-            <a class="nav-link" href="/">
-              <h2>
-                <i class="fas fa-pen"></i>
-              </h2>
-              <h5>
-                Journal
-              </h5>
-            </a>
-          </li>
-          <li class="sidenav-item nav-item">
-            <a class="nav-link active" href="/dashboard/day/">
-              <h2>
-                <i class="far fa-check-circle"></i>
-              </h2>
-              <h5>
-                Dashboard
-              </h5>
-            </a>
-          </li>
-          <li class="sidenav-item nav-item">
-            <a class="nav-link" href="/">
-              <h2>
-                <i class="fas fa-list"></i>
-              </h2>
-              <h5>
-                All Goals
-              </h5>
-            </a>
-          </li>
-          <li class="sidenav-item nav-item">
-            <a class="nav-link" href="/">
-              <h2>
-                <i class="fas fa-trophy"></i>
-              </h2>
-              <h5>
-                Challenges
-              </h5>
-            </a>
-          </li>
-          <li class="sidenav-item nav-item">
-            <a class="nav-link" href="/">
-              <h2>
-                <i class="fas fa-chart-pie"></i>
-              </h2>
-              <h5>
-                Stats
-              </h5>
-            </a>
-          </li>
-        </ul>
       </div>
       <div class="non-sidebar pt-3 bg-mainColor">
         <div class="container-fluid pt-4 align-self-end w-100">
-          <div class="row d-flex justify-content-between py-0 px-4">
-            <div class="col-4 d-flex align-items-center justify-content-start" style="height: 90%">
-              <h1 class="h2">Dashboard</h1>
+          <div class="row d-flex justify-content-between align-items-center py-0 px-4 flex-nowrap">
+            <div class="col-4 d-flex align-items-center justify-content-start" style="height: 90%; width: fit-content">
+              <h1 class="h2 my-0">Dashboard</h1>
             </div>
-            <div class="col-4"></div>
-            <div class="col-4 d-flex justify-content-end" style="height: 90%"> 
+            <!-- <div class="col-4 "></div> -->
+            <div class="col-4 d-flex justify-content-end" style="height: 90%; width: fit-content"> 
               <button class="btn-primary btn" data-bs-toggle="modal"
               data-bs-target="#addGoalModal">
                 <i class="fas fa-plus"></i>
               </button>
               <select
-              class="time-view-select form-select" style="width: 65%;"
+              class="time-view-select form-select" style="width: 180px;"
               aria-label="Default select example"
             >
               <option value="day" selected>Today's View</option>
@@ -158,21 +106,21 @@
                   <section class="time-content">
                     <ul class="nav nav-pills nav nav-pills d-flex justify-content-evenly align-items-center">
                       <li class="nav-item">
-                        <a class="nav-link primary-color active" data-toggle="pill" href="#morningTab">Morning</a>
+                        <a class="nav-link" data-toggle="pill" href="#morningTab">Morning</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link primary-color" data-toggle="pill" href="#noonTab">Afternoon</a>
+                        <a class="nav-link" data-toggle="pill" href="#noonTab">Afternoon</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link primary-color" data-toggle="pill" href="#nightTab">Night</a>
+                        <a class="nav-link" data-toggle="pill" href="#nightTab">Night</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link primary-color" data-toggle="pill" href="#allDayTab">All Day</a>
+                        <a class="nav-link" data-toggle="pill" href="#allDayTab">All Day</a>
                       </li>
                     </ul>
             
                     <div class="tab-content my-5">
-                      <div class="morning tab-pane active my-3" id="morningTab">
+                      <div class="morning tab-pane my-3" id="morningTab">
                         <p>Morning</p>
                       </div>
                      
@@ -208,7 +156,7 @@
       >
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-mainColor">
               <h2 class="modal-title fs-5" id="addGoalModalLabel">Modal</h2>
               <button
                 type="button"
@@ -217,7 +165,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body pick-goal-modal">
+            <div class="modal-body pick-goal-modal bg-mainColor">
               <div class="pick-goal-container container-fluid">
                 <div class="row">
                   <div class="col-md-4 modal-nav-col">
@@ -362,11 +310,15 @@ localStorage.setItem('theme', theme);
             document.documentElement.style.setProperty('--main-color', 'black');
             document.documentElement.style.setProperty('--second-color', '#121212');
             document.documentElement.style.setProperty('--third-color', '#212529');
+            document.documentElement.style.setProperty('--forth-color', '#8e8e8e54');
+            document.documentElement.style.setProperty('--main-text-color', 'white');
           } else {
             setTheme('light');
             document.documentElement.style.setProperty('--main-color', '#e4e4e4');
             document.documentElement.style.setProperty('--second-color', '#F5F5F5');
             document.documentElement.style.setProperty('--third-color', 'white');
+            document.documentElement.style.setProperty('--forth-color', '#e4e4e4');
+            document.documentElement.style.setProperty('--main-text-color', 'black');
           }
     }
 

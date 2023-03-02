@@ -1,7 +1,7 @@
-    :root {
+    /* :root {
       --main-color: '';
       --second-color: '';
-    }
+    } */
   
   .bg-mainColor {
     background-color: var(--main-color);
@@ -15,6 +15,14 @@
   
   .bg-second {
     background-color:var(--second-color) !important;
+  }
+
+  .bg-third {
+    background-color:var(--third-color) !important;
+  }
+
+  .bg-forth {
+    background-color:var(--forth-color) !important;
   }
   
    .hide {
@@ -45,7 +53,7 @@
     .navbar {
         height: 100px;
        }
-       
+
    .side-navbar-container {
     width: 120px;
    }
@@ -73,6 +81,8 @@
 }
   }  
 
+
+
 @media (max-width: 768px) {
     .dashboard-page-container {
         flex-direction: column-reverse;
@@ -88,7 +98,7 @@
 
     .side-navbar {
         flex-direction: row;
-        position: sticky;
+        position: fixed;
         bottom: 0;
     }
 
@@ -123,7 +133,22 @@
     color: #fff;
   }
 
+/* day only styles */
+.nav-pills .nav-link {
+    color: #A5A5A5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.nav-pills .nav-link.active {
+    background-color: var(--forth-color)!important;
+    color: var(--main-text-color)!important;
+    font-weight: 600;
+    height: 34px;
+    left: 424px;
+    border-radius: 39px;        
+  }
 
   /* modal */
   .pick-goal-modal {
@@ -155,4 +180,8 @@
 
 .add-your-own-goal-btn {
     margin: 15px 0;
+}
+
+.list-group-item, .form-control {
+    background-color: var(--main-color)!important;
 }

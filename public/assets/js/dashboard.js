@@ -192,3 +192,12 @@ document.getElementById("next-week").addEventListener("click", () => {
     updateSelectedMonth();
     updateSelectedYear();  
     
+    const prevBtns = document.querySelectorAll('.prev-btn');
+    prevBtns.forEach((btn) => {
+      btn.innerHTML = '<i class="fas fa-arrow-left"></i>'
+    });
+    
+    const nextBtns = document.querySelectorAll('.next-btn');
+    nextBtns.forEach((btn) => {
+      btn.innerHTML = '<i class="fas fa-arrow-right"></i>'
+    });

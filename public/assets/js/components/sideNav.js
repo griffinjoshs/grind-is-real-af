@@ -24,7 +24,7 @@ const displaySideNav = () => {
         <li class="sidenav-item nav-item text-mainColor">
           <a class="nav-link ${window.location.pathname === '/challenges' ? 'active' : ''}" href="/challenges">
             <h2>
-              <i class="fas fa-trophy"></i>
+            <i class="fa-solid fa-person-running"></i>
             </h2>
             <h5>
               Challenges

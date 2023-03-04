@@ -44,3 +44,5 @@ if (currentHour < 12) {
   tabPanes[2].classList.add('show', 'active');
 }
 
+
+// time, goal title, task title, icon

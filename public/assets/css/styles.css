@@ -34,3 +34,9 @@
 .progress {
     border-radius: 0!important;
 }
+
+.coin-count h4, .coin-count h3 {
+  font-size: 35px;
+  padding: 0;
+  margin: 0;
+}

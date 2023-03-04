@@ -32,8 +32,10 @@ function createNavbar(userInfo) {
       </div>
     </div>
 
-    <div class="coin-count d-flex justify-content-evenly align-items-center py-1 m-0 bg-third rounded-pill" style='width: 130px'>
-      <h4>$</h4>
+    <div class="coin-count d-flex justify-content-evenly align-items-center py-1 px-2 bg-third rounded-pill flex-grow" style='min-width: 130px'>
+      <h4>
+      <i class="fa-solid fa-coins"></i>
+      </h4>
       <h3>45</h3>
     </div>
 

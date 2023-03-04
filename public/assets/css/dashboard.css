@@ -1,0 +1,97 @@
+.view {
+    display: flex;
+    align-items: center;
+}
+
+.selected-date {
+    font-size: 35px;
+    line-height: 1;
+    /* padding-bottom: 32px; */
+}
+
+.arrow-btn {
+    height: 30px;
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none!important;
+}
+
+.level {
+    width: 300px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-page-container {
+        flex-direction: column-reverse;
+       }
+
+    .dashboard-content-row {
+        flex-direction: column-reverse;
+    }
+
+}
+
+/* day only styles */
+.nav-pills .nav-link {
+    color: #A5A5A5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-pills .nav-link:hover {
+    color: var(--main-text-color)!important;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--forth-color)!important;
+    color: var(--main-text-color)!important;
+    font-weight: 600;
+    height: 34px;
+    left: 424px;
+    border-radius: 39px;        
+  }
+
+  /* modal */
+  .pick-goal-modal {
+    padding: 20px 0;
+    border: none;
+}
+
+.pick-goal-modal .list-group-item {
+    border: none;
+}
+
+.list-group-item {
+    border-bottom-right-radius: none!important;
+    border-bottom-left-radius: none!important;
+}
+
+.list-group-item {
+    background-color: var(--main-color)!important;
+    padding: 15px!important;
+}
+
+.list-group-item-action:focus, .list-group-item-action:hover, .list-group-item-action:active {
+    background: var(--third-color)!important;
+    color: var(--main-text-color)!important;
+}
+
+.modal-nav-col h2 {
+    font-size: 20px;
+}
+
+.in-between {
+    margin: 5px;
+    border-top: var(--bs-border-width) solid;
+}
+
+.open-goal-modal-btn {
+    width: 40px;
+}
+
+.add-your-own-goal-btn {
+    margin: 15px 0;
+}

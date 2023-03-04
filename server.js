@@ -1,79 +1,20 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 9800;
-const moment = require("moment");
-
-// Define current date variables
-const currentDate = moment();
-const currentDay = currentDate.format('MM-DD-YYYY');
-const currentWeek = currentDate.format("WW-YYYY");
-const currentMonth = currentDate.format('MM-YYYY');
-const currentYear = currentDate.year();
-
-function setWeekView(date) {
-  const weekNumber = date.isoWeek();
-  const year = date.year();
-  const formattedDate = `${weekNumber}-${year}`;
-}
-
-setWeekView(currentDate);
 
 // Serve static files from the public directory
-app.use(express.static("public"));
+app.use(express.static('public'));
 
-app.get("/", (req, res) => {
-  res.json("this is working and will be something");
+app.get('/', (req, res) => {
+  res.json({ message: 'Working!!!!!!' });
 });
 
-app.get("/current-date", (req, res) => {
-  const currentDate = moment();
-  res.send(currentDate.toISOString());
-});
-
-app.get('/dashboard/day/:date', (req, res) => {
-  const { date } = req.params;
-  const selectedDate = date || currentDay;
-  res.sendFile(__dirname + "/public/dashboard.html", { selectedDate });
-});
-
-app.get("/dashboard/week/:weekYear", (req, res) => {
-  let { weekYear } = req.params;
-  weekYear = weekYear || currentWeek;
-  res.sendFile(__dirname + "/public/dashboard.html");
-});
-
-app.get("/dashboard/month/:monthYear", (req, res) => {
-  let { monthYear } = req.params;
-    monthYear = currentMonth;
-  res.sendFile(__dirname + "/public/dashboard.html");
-});
-
-app.get("/dashboard/year/:year", (req, res) => {
-  let { year } = req.params;
-    year = currentYear;
-  res.sendFile(__dirname + "/public/dashboard.html");
-});
-
-app.get('/dashboard/day/', (req, res) => {
-  res.redirect(`/dashboard/day/${currentDay}`);
-});
-
-app.get('/dashboard/week/', (req, res) => {
-  res.redirect(`/dashboard/week/${currentWeek}`);
-});
-
-app.get('/dashboard/month/', (req, res) => {
-  res.redirect(`/dashboard/month/${currentMonth}`);
-});
-
-app.get('/dashboard/year/', (req, res) => {
-  res.redirect(`/dashboard/year/${currentYear}`);
-});
-
-// Render the index page for the root route
-// app.get("/", (req, res) => {
-//   res.render("index");
-// });
+// Require the dashboard routes and use them with the /dashboard prefix
+app.use('/dashboard', require('./serverFiles/routes/dashboard.routes'));
+app.use('/journal', require('./serverFiles/routes/journal.routes'));
+app.use('/challenges', require('./serverFiles/routes/challenges.routes'));
+app.use('/stats', require('./serverFiles/routes/stats.routes'));
+app.use('/rewards', require('./serverFiles/routes/rewards.routes'));
 
 // Start the server
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));

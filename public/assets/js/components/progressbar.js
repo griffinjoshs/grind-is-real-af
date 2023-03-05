@@ -16,7 +16,7 @@ function createProgressBar(percentage, color) {
   return progressBar;
 }
 
-document.getElementById('level-progress').appendChild(createProgressBar(30, '#05EA00'));
+document.getElementById('level-progress').appendChild(createProgressBar(61, '#05EA00'));
 
 
 

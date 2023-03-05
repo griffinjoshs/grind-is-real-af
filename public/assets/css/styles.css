@@ -37,6 +37,7 @@
 
 .coin-count {
   border: solid goldenrod 1px;
+  /* min-width: 140px; */
 }
 
 .fa-coins {
@@ -48,3 +49,4 @@
   padding: 0;
   margin: 0;
 }
+

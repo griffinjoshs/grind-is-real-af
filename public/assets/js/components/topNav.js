@@ -4,12 +4,12 @@ function createNavbar(userInfo) {
   return `
   <nav class="navbar bg-second p-0">
   <div class="container-fluid h-100 px-0" style="position: relative">
-    <div class="level p-0 m-0 h-100">
-      <div class="level p-0 m-0 h-100">
+  <div class="nav-left p-0 m-0 h-100 d-flex align-items-center justify-content-left">
+  <div class="level p-0 m-0 h-100 flex-grow-1">
         <div
           class="navbar-brand bg-primary d-flex justify-content-left align-items-center"
           href="#"
-          style="height: 100%; width: 85%"
+          style="height: 100%; max-width: 250px"
         >
           <div
             class="current-level d-flex align-items-center justify-content-center mh-100"
@@ -25,20 +25,21 @@ function createNavbar(userInfo) {
                 <h3 class="px-2 text-dark">@${username}</h3>
               </div>
               <div id="level-progress"></div>
+
+              
             </div>
           </div>
         </div>
         <div></div>
       </div>
-    </div>
 
-    <div class="coin-count d-flex justify-content-evenly align-items-center py-1 px-2 bg-third rounded-pill flex-grow" style='min-width: 130px'>
-      <h4>
-      <i class="fa-solid fa-coins"></i>
-      </h4>
-      <h3>45</h3>
-    </div>
+      <div class="total-coin-count" style='min-width: 120px'></div>
 
+    </div>
+    <div class="nav-right p-0 m-0 h-100 d-flex align-items-center justify-content-between w-25">
+    <button class='h1 notifications-dropdown p-0 m-0' style='background: none; border: none'>
+    <i class="fa-solid fa-bell"></i>
+    </button>
     <button
       class="navbar-toggler"
       type="button"
@@ -49,6 +50,7 @@ function createNavbar(userInfo) {
     >
       <span class="navbar-toggler-icon" style="font-size: 30px"></span>
     </button>
+    </div>
     <div
       class="offcanvas offcanvas-end"
       tabindex="-1"

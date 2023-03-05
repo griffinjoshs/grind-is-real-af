@@ -22,15 +22,24 @@
     width: 300px;
 }
 
+@media (min-width: 768px) {
+    .stat-container {
+        background-color: var(--second-color);
+    }
+}
+
 @media (max-width: 768px) {
+    .stat-container {
+        background-color: var(--main-text-color);
+    }
+
     .dashboard-page-container {
         flex-direction: column-reverse;
        }
 
     .dashboard-content-row {
         flex-direction: column-reverse;
-    }
-
+    }  
 }
 
 /* day only styles */

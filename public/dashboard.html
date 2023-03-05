@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <title>Dashboard</title>
@@ -12,7 +12,7 @@
   <body>
     <div class="color-toggle form-check form-switch" style="width: fit-content;">
       <input class="form-check-input" type="checkbox" role="switch" id="toggle-bgColor">
-      <label class="form-check-label" for="toggle-bgColor">Toggle Dark Mode</label>
+      <label class="form-check-label" for="toggle-bgColor">Toggle Light Mode</label>
     </div>
     <div class="navbar-container"></div>
     <div class="container-fluid d-flex px-0 dashboard-page-container">
@@ -113,7 +113,7 @@
               </div>
               <div class="col-md-4 dash-column text-center bg-second">
                 <div class="timeframe-coin-container d-flex justify-content-evenly py-3">
-                  <h3>Todays-Coins</h3>
+                  <h3>Coins Aquired</h3>
                   <div class="timeframe-coin-count"></div>
                 </div>
                 <div id="timeframeProgress"></div>
@@ -288,12 +288,12 @@
     <script src="/assets/js/components/topNav.js"></script>
     <script src="/assets/js/components/sideNav.js"></script>
     <script src="/assets/js/components/coin-count.js"></script>
+    <script src="/assets/js/components/progressbar.js"></script>
+    <script src="/assets/js/colorMode.js"></script>
     <script src="/assets/js/createGoalmodal.js"></script>
     <script src="/assets/js/timeframe-content.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/scripts.js"></script>
     <script src="/assets/js/dashboard.js"></script>
-    <script src="/assets/js/colorMode.js"></script>
-    <script src="/assets/js/components/progressbar.js"></script>
   </body>
 </html>

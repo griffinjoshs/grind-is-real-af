@@ -19,7 +19,7 @@
             if (toggleBgColor.checked) {
                 setTheme('dark');
                 document.documentElement.style.setProperty('--main-color', 'black');
-                document.documentElement.style.setProperty('--second-color', '#121212');
+                document.documentElement.style.setProperty('--second-color', '#1c1c1c');
                 document.documentElement.style.setProperty('--third-color', '#212529');
                 document.documentElement.style.setProperty('--forth-color', '#8e8e8e54');
                 document.documentElement.style.setProperty('--main-text-color', 'white');

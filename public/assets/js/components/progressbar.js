@@ -21,7 +21,6 @@ document.getElementById('level-progress').appendChild(createProgressBar(61, '#05
 
 
 
-
 function createCircularProgressBar(percentage, color) {
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.setAttribute('viewBox', '0 0 50 50');
@@ -31,15 +30,25 @@ function createCircularProgressBar(percentage, color) {
   const radius = 20;
   const circumference = 2 * Math.PI * radius;
 
-  const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-  circle.setAttribute('cx', '50%');
-  circle.setAttribute('cy', '50%');
-  circle.setAttribute('r', radius);
-  circle.setAttribute('fill', 'transparent');
-  circle.setAttribute('stroke', color);
-  circle.setAttribute('stroke-width', '5');
-  circle.setAttribute('stroke-dasharray', `${circumference} ${circumference}`);
-  circle.setAttribute('stroke-dashoffset', circumference);
+  // Add background circle
+  const bgCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  bgCircle.setAttribute('cx', '50%');
+  bgCircle.setAttribute('cy', '50%');
+  bgCircle.setAttribute('r', radius);
+  bgCircle.setAttribute('fill', 'transparent');
+  bgCircle.setAttribute('stroke', 'var(--bs-secondary-bg)'); // set background color
+  bgCircle.setAttribute('stroke-width', '5');
+
+  // Add progress circle
+  const progressCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  progressCircle.setAttribute('cx', '50%');
+  progressCircle.setAttribute('cy', '50%');
+  progressCircle.setAttribute('r', radius);
+  progressCircle.setAttribute('fill', 'transparent');
+  progressCircle.setAttribute('stroke', color);
+  progressCircle.setAttribute('stroke-width', '5');
+  progressCircle.setAttribute('stroke-dasharray', `${circumference} ${circumference}`);
+  progressCircle.setAttribute('stroke-dashoffset', circumference);
 
   const percentageText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
   percentageText.setAttribute('x', '50%');
@@ -51,17 +60,18 @@ function createCircularProgressBar(percentage, color) {
   percentageText.setAttribute('fill', 'var(--main-text-color)');
   percentageText.textContent = `${percentage}%`;
 
-  svg.appendChild(circle);
+  svg.appendChild(bgCircle);
+  svg.appendChild(progressCircle);
   svg.appendChild(percentageText);
 
   const offset = circumference - percentage / 100 * circumference;
-  circle.style.strokeDashoffset = circumference;
+  progressCircle.style.strokeDashoffset = circumference;
   setTimeout(() => {
-    circle.style.transition = 'stroke-dashoffset 1s ease-in-out';
-    circle.style.strokeDashoffset = offset;
+    progressCircle.style.transition = 'stroke-dashoffset 1s ease-in-out';
+    progressCircle.style.strokeDashoffset = offset;
   }, 100);
 
   return svg;
 }
 
-document.getElementById('timeframeProgress').appendChild(createCircularProgressBar(90, '#05EA00'));
+document.getElementById('timeframeProgress').appendChild(createCircularProgressBar(72, '#05EA00'));

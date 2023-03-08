@@ -116,7 +116,7 @@ document.getElementById("next-week").addEventListener("click", () => {
       if (selectedDate) {
         console.log("Updating selected date text content");
         selectedDate.innerHTML = formattedDate;
-        dayContent(date)
+        displayCurrentDay(date)
       } else {
         console.log("Selected date element not found");
       }
@@ -147,6 +147,7 @@ document.getElementById("next-week").addEventListener("click", () => {
     function setYearView(date) {
       console.log(date)
     const year = date.year();
+    displayCurrentYear(date)
     const formattedDate = `${year}`;
     const selectedDate = document.querySelector("#year-view .selected-date");
     selectedDate.textContent = formattedDate;

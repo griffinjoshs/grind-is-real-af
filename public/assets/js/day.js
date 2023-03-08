@@ -1,7 +1,7 @@
 // dailyview navtab bar (today, this week, this month, this year)
 const pills = document.querySelectorAll(".nav-pills .nav-link");
 
-const dayContent = (date) => {
+const displayCurrentDay = (date) => {
     console.log(date)
 document.querySelector('.day-content').classList.remove('hide')
 

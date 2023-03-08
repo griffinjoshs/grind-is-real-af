@@ -23,6 +23,7 @@ const displayCurrentWeek = (date) => {
     calendar += "<tr>";
     for (let i = 0; i < 7; i++) {
       const dayFormatted = day.format("MM-DD-YYYY");
+      
       calendar += `<td><a href="/dashboard/day/${dayFormatted}"><div class="day-cell">${day.format(
         "D"
       )}</div></a></td>`;

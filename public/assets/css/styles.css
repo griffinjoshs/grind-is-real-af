@@ -81,7 +81,8 @@
 
 .calendar .day-cell {
   /* background-color: aqua; */
-  margin: 5px;
+  padding: 20px;
+  border: #007bff solid 1px;
   /* padding: 80px 0; */
 }
 
@@ -91,7 +92,7 @@
 }
 
 .calendar a:hover {
-  text-decoration: underline;
+  filter: invert(100);
 }
 
 .calendar .active {
@@ -108,3 +109,8 @@
   opacity: 0.5;
 }
 
+.calendar .today {
+  /* background-color: var(--success-color); */
+  background-color: #007bff;
+  color: #fff;
+}

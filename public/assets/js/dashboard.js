@@ -6,6 +6,8 @@ fetch('/current-date')
     currentDate = moment(text);
   });
 
+  const dashColumn = document.querySelector(".dash-column");
+
 // Rest of your code here
 document.getElementById("prev-day").addEventListener("click", () => {
   const currentUrl = window.location.href;
@@ -105,34 +107,45 @@ document.getElementById("next-week").addEventListener("click", () => {
     
     // Functions to render the views
     function setDayView(date) {
+      console.log(date)
       const formattedDate = date.format("dddd, <br> MMMM D, YYYY");
       const selectedDate = document.querySelector("#day-view .selected-date");
+      
       console.log("Formatted date:", formattedDate);
       console.log("Selected date element:", selectedDate);
       if (selectedDate) {
         console.log("Updating selected date text content");
         selectedDate.innerHTML = formattedDate;
+        dayContent(date)
       } else {
         console.log("Selected date element not found");
       }
-    }     
+    }
+    
 
     function setWeekView(date) {
-      const weekNumber = date.isoWeek();
-      const year = date.year();
-      const weeksLeft = moment().isoWeeksInYear() - weekNumber;
+      const weekNumber = moment(date).isoWeek(); 
+      const year = moment(date).year();
+      let weekInfo = weekNumber + ', ' + year
+      console.log(weekInfo)
+      displayCurrentWeek(date)
+      const weeksLeft = moment(date).isoWeeksInYear() - weekNumber;
       const formattedDate = `Week ${weekNumber} <br> ${weeksLeft} weeks left in the year`;
       const selectedDate = document.querySelector("#week-view .selected-date");
       selectedDate.innerHTML = formattedDate;
     }       
     
     function setMonthView(date) {
-    const formattedDate = date.format("MMMM, YYYY");
-    const selectedDate = document.querySelector("#month-view .selected-date");
-    selectedDate.textContent = formattedDate;
+      let monthInfo = moment(date).format("MM, YYYY");
+      console.log(monthInfo)
+      displayCurrentMonth(date)
+      const formattedDate = moment(date).format("MMMM, YYYY");
+      const selectedDate = document.querySelector("#month-view .selected-date");
+      selectedDate.textContent = formattedDate;
     }
     
     function setYearView(date) {
+      console.log(date)
     const year = date.year();
     const formattedDate = `${year}`;
     const selectedDate = document.querySelector("#year-view .selected-date");
@@ -160,7 +173,7 @@ document.getElementById("next-week").addEventListener("click", () => {
         const date = moment().year(year).isoWeek(weekNumber);
         setWeekView(date);
       }
-    }
+    }    
     
     function updateSelectedMonth() {
       const currentUrl = window.location.href;

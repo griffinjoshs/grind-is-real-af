@@ -50,3 +50,60 @@
   margin: 0;
 }
 
+/* calandar */
+.calendar .view {
+  margin-top: 20px;
+}
+
+.calendar .change-view {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.calendar table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.calendar td {
+  min-height: 50px;
+  /* padding: 10px; */
+  text-align: center;
+  border: none;
+}
+
+.calendar .day-cell {
+  /* background-color: aqua; */
+  margin: 5px;
+  /* padding: 80px 0; */
+}
+
+.calendar a {
+  /* color: black; */
+  text-decoration: none;
+}
+
+.calendar a:hover {
+  text-decoration: underline;
+}
+
+.calendar .active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.calendar button {
+  margin-right: 10px;
+}
+
+.calendar .prev-month,
+.calendar .next-month {
+  opacity: 0.5;
+}

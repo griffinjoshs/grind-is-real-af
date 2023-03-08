@@ -1,7 +1,8 @@
 // dailyview navtab bar (today, this week, this month, this year)
 const pills = document.querySelectorAll(".nav-pills .nav-link");
 
-const dayContent = () => {
+const dayContent = (date) => {
+    console.log(date)
 document.querySelector('.day-content').classList.remove('hide')
 
     pills.forEach((pill) => {
@@ -22,6 +23,16 @@ document.querySelector('.day-content').classList.remove('hide')
         pillContent.style.display = "block";
       });
     });
+
+        // Dynamically generate the data based on the selected date
+        const morning = document.querySelector(".morning");
+        const noon = document.querySelector(".noon");
+        const night = document.querySelector(".night");
+        
+        // You can replace the sample data below with your actual data
+        morning.innerHTML = `<p>Morning schedule for ${date.format("dddd, MMMM D, YYYY")}</p>`;
+        noon.innerHTML = `<p>Afternoon schedule for ${date.format("dddd, MMMM D, YYYY")}</p>`;
+        night.innerHTML = `<p>Night schedule for ${date.format("dddd, MMMM D, YYYY")}</p>`;
   }
  
 // get current hour
@@ -43,6 +54,3 @@ if (currentHour < 12) {
   tabs[2].classList.add('active');
   tabPanes[2].classList.add('show', 'active');
 }
-
-
-// time, goal title, task title, icon

@@ -1,10 +1,21 @@
 const goals = [
     {
-        name: 'Workout',
-        tags: 'Fitness',
+        date: '03-06-2023',
+        goalList: {
+           goal1: {
+            name: 'Workout',
+            time: '9:00'
+           },
+           goal2: {
+            name: 'Work',
+            time: '1:00'
+           },
+           goal3: {
+            name: 'Meditate',
+            time: '7:00'
+           }
+        }
+        
     },
-    {
-        name: 'Read Book',
-        tags: 'Reading, Brain Excercise',
-    }
 ]
+

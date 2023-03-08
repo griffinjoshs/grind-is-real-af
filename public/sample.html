@@ -1,0 +1,209 @@
+<!-- <style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td {
+    height: 80px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  td:hover {
+    background-color: #f5f5f5;
+  }
+
+  td.table-cell-other-month {
+    color: #bbb;
+  }
+
+  td.table-cell-today {
+    background-color: #f0f0f0;
+  }
+
+  th {
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ddd;
+  }
+
+  th:first-child,
+  td:first-child {
+    border-left: none;
+  }
+
+  th:last-child,
+  td:last-child {
+    border-right: none;
+  }
+
+  tr:first-child th {
+    border-top: none;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  #calendar {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+</style>
+
+<div class="week-container container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 id="week-dates"></h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script>
+  // Set the initial date to the current week
+  currentDate = moment().startOf("week");
+
+  // Function to generate the calendar grid for the current week
+  function generateCalendar() {
+    // Get the calendar body element and clear its contents
+    let calendarBody = document.getElementById("calendar-body");
+    calendarBody.innerHTML = "";
+
+    // Set the week dates in the header
+    let weekDatesHeader = document.getElementById("week-dates");
+    weekDatesHeader.innerHTML = `${currentDate.format(
+      "MMMM D, YYYY"
+    )} - ${currentDate.clone().add(6, "days").format("MMMM D, YYYY")}`;
+
+    // Create an array of cells to represent the days in the week
+    let cells = [];
+    for (let i = 0; i < 7; i++) {
+      let date = currentDate.clone().add(i, "days");
+      cells.push({
+        date: date,
+        isCurrentWeek: true,
+      });
+    }
+
+    // Create the calendar grid by adding rows and cells to the table
+    let row = document.createElement("tr");
+    cells.forEach((cell, index) => {
+      let cellClass = "table-cell";
+      if (!cell.isCurrentWeek) {
+        cellClass += " table-cell-other-week";
+      }
+      if (cell.date.isSame(moment(), "day")) {
+        cellClass += " table-cell-today";
+      }
+
+      let cellElement = document.createElement("td");
+      cellElement.className = cellClass;
+      cellElement.innerHTML = cell.date.date();
+
+      // Add a click event listener to the cell to redirect to the /dashboard/day URL
+      cellElement.addEventListener("click", () => {
+        let url = `/dashboard/day/${cell.date.format("MM-DD-YYYY")}`;
+        window.location.href = url;
+      });
+
+      row.appendChild(cellElement);
+    });
+
+    calendarBody.appendChild(row);
+  }
+
+  // Generate the calendar for the current week
+  function generateWeekCalendar() {
+    // Get the calendar body element and clear its contents
+    let calendarBody = document.getElementById("calendar-body");
+    calendarBody.innerHTML = "";
+    // Get the week and year from the URL
+    let url = window.location.pathname;
+    let match = url.match(/\/dashboard\/week\/(\d{2})-(\d{4})/);
+    let year, week;
+    if (match) {
+      week = parseInt(match[1]);
+      year = parseInt(match[2]);
+    } else {
+      // If the URL doesn't contain a valid week and year, use the current week and year
+      week = moment().week();
+      year = moment().year();
+    }
+
+    // Set the week and year in the header
+    let weekYearHeader = document.getElementById("week-year");
+    weekYearHeader.innerHTML = `Week ${week} ${year}`;
+
+    // Set the currentDate to the chosen week and year
+    currentDate = moment().year(year).week(week);
+
+    // Create an array of cells to represent the days in the week
+    let cells = [];
+    for (let i = 0; i < 7; i++) {
+      let date = moment().year(year).week(week).day(i);
+      cells.push({
+        date: date,
+        isCurrentWeek: date.week() === week,
+      });
+    }
+
+    // Create the calendar grid by adding rows and cells to the table
+    let row = document.createElement("tr");
+    cells.forEach((cell, index) => {
+      let cellClass = "table-cell";
+      if (!cell.isCurrentWeek) {
+        cellClass += " table-cell-other-week";
+      }
+      if (cell.date.isSame(moment(), "day")) {
+        cellClass += " table-cell-today";
+      }
+
+      let cellElement = document.createElement("td");
+      cellElement.className = cellClass;
+      cellElement.innerHTML = cell.date.format("ddd D");
+
+      // Add a click event listener to the cell to redirect to the /dashboard/day URL
+      cellElement.addEventListener("click", () => {
+        let url = `/dashboard/day/${cell.date.format("MM-DD-YYYY")}`;
+        window.location.href = url;
+      });
+
+      row.appendChild(cellElement);
+    });
+
+    calendarBody.appendChild(row);
+  }
+
+  // Generate the calendar for the initial week
+  generateWeekCalendar();
+
+  // Add event listeners to the previous and next week buttons
+  document.getElementById("previous-week").addEventListener("click", () => {
+    currentDate.subtract(1, "weeks");
+    generateWeekCalendar();
+  });
+
+  document.getElementById("next-week").addEventListener("click", () => {
+    currentDate.add(1, "weeks");
+    generateWeekCalendar();
+  });
+</script> -->

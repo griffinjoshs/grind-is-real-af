@@ -12,7 +12,6 @@ const timeViewSelect = document.querySelector('.time-view-select');
 if (pathname.includes('/dashboard/day/')) {
   timeViewSelect.value = 'day';
   document.getElementById('day-view').style.display = 'block';
-  dayContent()
 } else if (pathname.includes('/dashboard/week/')) {
   timeViewSelect.value = 'week';
   document.getElementById('week-view').style.display = 'block';

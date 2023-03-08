@@ -4,66 +4,96 @@
     <meta charset="UTF-8" />
     <title>Dashboard</title>
   </head>
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/navbars.css">
-  <link rel="stylesheet" href="/assets/css/dashboard.css">
-  <link rel="stylesheet" href="/assets/css/bootstrap.styles.css">
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/navbars.css" />
+  <link rel="stylesheet" href="/assets/css/dashboard.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.styles.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
   <body>
-    <div class="color-toggle form-check form-switch" style="width: fit-content;">
-      <input class="form-check-input" type="checkbox" role="switch" id="toggle-bgColor">
-      <label class="form-check-label" for="toggle-bgColor">Toggle Light Mode</label>
+    <div class="color-toggle form-check form-switch" style="width: fit-content">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="toggle-bgColor"
+      />
+      <label class="form-check-label" for="toggle-bgColor"
+        >Toggle Light Mode</label
+      >
     </div>
     <div class="navbar-container"></div>
     <div class="container-fluid d-flex px-0 dashboard-page-container">
-      <div class="side-navbar-container">
-      </div>
+      <div class="side-navbar-container"></div>
       <div class="non-sidebar pt-3 bg-mainColor">
         <div class="container-fluid pt-4 align-self-end w-100">
-          <div class="row d-flex justify-content-between align-items-center py-0 px-4 flex-nowrap">
-            <div class="col-4 d-flex align-items-center justify-content-start" style="height: 90%; width: fit-content">
+          <div
+            class="row d-flex justify-content-between align-items-center py-0 px-4 flex-nowrap"
+          >
+            <div
+              class="col-4 d-flex align-items-center justify-content-start"
+              style="height: 90%; width: fit-content"
+            >
               <h1 class="h2 my-0">Dashboard</h1>
             </div>
             <!-- <div class="col-4 "></div> -->
-            <div class="col-4 d-flex justify-content-end" style="height: 90%; width: fit-content"> 
-              <button class="btn-primary btn" data-bs-toggle="modal"
-              data-bs-target="#addGoalModal">
+            <div
+              class="col-4 d-flex justify-content-end"
+              style="height: 90%; width: fit-content"
+            >
+              <button
+                class="btn-primary btn"
+                data-bs-toggle="modal"
+                data-bs-target="#addGoalModal"
+              >
                 <i class="fas fa-plus"></i>
               </button>
               <select
-              class="time-view-select form-select" style="width: 180px;"
-              aria-label="Default select example"
-            >
-              <option value="day" selected>Today's View</option>
-              <option value="week">Weekly View</option>
-              <option value="month">Monthly View</option>
-              <option value="year">Yearly View</option>
-            </select>
-          </div>
+                class="time-view-select form-select"
+                style="width: 180px"
+                aria-label="Default select example"
+              >
+                <option value="day" selected>Today's View</option>
+                <option value="week">Weekly View</option>
+                <option value="month">Monthly View</option>
+                <option value="year">Yearly View</option>
+              </select>
+            </div>
           </div>
         </div>
-    
-        <hr class="mt-0">
+
+        <hr class="mt-0" />
         <div id="dashboard">
-          <div class="view w-auto justify-content-evenly text-center align-items" id="day-view">
+          <div
+            class="view w-auto justify-content-evenly text-center align-items"
+            id="day-view"
+          >
             <!-- <h2>Day view</h2> -->
             <button id="prev-day" class="arrow-btn prev-btn"></button>
             <div class="selected-date h2"></div>
             <button id="next-day" class="arrow-btn next-btn"></button>
           </div>
-          <div class="view w-auto justify-content-evenly text-center" id="week-view">
+          <div
+            class="view w-auto justify-content-evenly text-center"
+            id="week-view"
+          >
             <!-- <h2>Week view</h2> -->
             <button id="prev-week" class="arrow-btn prev-btn"></button>
             <div class="selected-date h2"></div>
             <button id="next-week" class="arrow-btn next-btn"></button>
           </div>
-          <div class="view w-auto justify-content-evenly text-center" id="month-view">
+          <div
+            class="view w-auto justify-content-evenly text-center"
+            id="month-view"
+          >
             <!-- <h2>Month view</h2> -->
             <button id="prev-month" class="arrow-btn prev-btn"></button>
             <div class="selected-date h2"></div>
             <button id="next-month" class="arrow-btn next-btn"></button>
           </div>
-          <div class="view w-auto justify-content-evenly text-center" id="year-view">
+          <div
+            class="view w-auto justify-content-evenly text-center"
+            id="year-view"
+          >
             <!-- <h2>Year view</h2> -->
             <button id="prev-year" class="arrow-btn prev-btn"></button>
             <div class="selected-date h2"></div>
@@ -72,31 +102,43 @@
         </div>
         <div class="w-100 pt-3">
           <div class="container-fluid">
-            <div class="dashboard-content-row row d-flex justify-content-evenly h-100">
-
+            <div
+              class="dashboard-content-row row d-flex justify-content-evenly h-100"
+            >
               <div class="col-md-6 dash-column text-center bg-second">
                 <div class="day-content container hide">
                   <section class="time-content pt-4">
-                    <ul class="nav nav-pills nav nav-pills d-flex justify-content-evenly align-items-center">
+                    <ul
+                      class="nav nav-pills nav nav-pills d-flex justify-content-evenly align-items-center"
+                    >
                       <li class="nav-item">
-                        <a class="nav-link" data-toggle="pill" href="#morningTab">Morning</a>
+                        <a
+                          class="nav-link"
+                          data-toggle="pill"
+                          href="#morningTab"
+                          >Morning</a
+                        >
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" data-toggle="pill" href="#noonTab">Afternoon</a>
+                        <a class="nav-link" data-toggle="pill" href="#noonTab"
+                          >Afternoon</a
+                        >
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" data-toggle="pill" href="#nightTab">Night</a>
+                        <a class="nav-link" data-toggle="pill" href="#nightTab"
+                          >Night</a
+                        >
                       </li>
                       <!-- <li class="nav-item">
                         <a class="nav-link" data-toggle="pill" href="#allDayTab">All Day</a>
                       </li> -->
                     </ul>
-            
+
                     <div class="tab-content my-5">
                       <div class="morning tab-pane my-3" id="morningTab">
                         <p>Morning</p>
                       </div>
-                     
+
                       <div class="noon tab-pane" id="noonTab">
                         <p>Afternoon</p>
                       </div>
@@ -107,12 +149,19 @@
                         <p>All Day</p>
                       </div> -->
                     </div>
-            
-                </section>
-                 </div>
+                  </section>
+                </div>
+                <div class="week-content container hide">
+                  <div class="calendar week-calendar"></div>
+              </div>
+              <div class="month-content container hide">
+                  <div class="calendar month-calendar"></div>
+              </div>
               </div>
               <div class="col-md-4 dash-column text-center stat-container">
-                <div class="timeframe-coin-container d-flex justify-content-evenly py-4">
+                <div
+                  class="timeframe-coin-container d-flex justify-content-evenly py-4"
+                >
                   <h3>Coins Aquired</h3>
                   <div class="timeframe-coin-count"></div>
                 </div>
@@ -120,130 +169,136 @@
                 <h4 class="pt-2 pb-3">of Goals Completed</h4>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
     </div>
 
-        <!-- Modal -->
-        <div
-        class="modal fade"
-        id="addGoalModal"
-        tabindex="-1"
-        aria-labelledby="addGoalModal"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header bg-mainColor">
-              <h2 class="modal-title fs-5" id="addGoalModalLabel">Modal</h2>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body pick-goal-modal bg-mainColor">
-              <div class="pick-goal-container container-fluid">
-                <div class="row">
-                  <div class="col-md-4 modal-nav-col">
-                    <div class="row">
-                      <h2>Pick One</h2>
-                    </div>
-                    <hr class="in-between" />
-                    <div class="row">
-                      <div class="list-group" id="list-tab" role="tablist">
-                        <a
-                          class="list-group-item list-group-item-action"
-                          id="list-home-list"
-                          data-bs-toggle="list"
-                          href="#list-home"
-                          role="tab"
-                          aria-controls="aquire-wealth"
-                          >Aquire Wealth</a
-                        >
-                        <a
-                          class="list-group-item list-group-item-action"
-                          id="list-profile-list"
-                          data-bs-toggle="list"
-                          href="#list-profile"
-                          role="tab"
-                          aria-controls="get-fit"
-                          >Get Fit</a
-                        >
-                        <a
-                          class="list-group-item list-group-item-action"
-                          id="list-messages-list"
-                          data-bs-toggle="list"
-                          href="#list-messages"
-                          role="tab"
-                          aria-controls="eat-healthy"
-                          >Eat Healthy</a
-                        >
-                        <a
-                          class="list-group-item list-group-item-action"
-                          id="inner-peace-list"
-                          data-bs-toggle="list"
-                          href="#inner-peace"
-                          role="tab"
-                          aria-controls="inner-peace"
-                          >Find Inner Peace</a
-                        >
-                        <a
-                          class="list-group-item list-group-item-action"
-                          id="inner-the-boss"
-                          data-bs-toggle="list"
-                          href="#the-boss"
-                          role="tab"
-                          aria-controls="the-boss"
-                          >Work</a
-                        >
-                        <a
-                          class="list-group-item list-group-item-action"
-                          id="inner-the-teacher"
-                          data-bs-toggle="list"
-                          href="#the-teacher"
-                          role="tab"
-                          aria-controls="the-teacher"
-                          >School</a
-                        >
-                        <a
-                          class="list-group-item list-group-item-action"
-                          id="heal-your-brain"
-                          data-bs-toggle="list"
-                          href="#heal-your-brain"
-                          role="tab"
-                          aria-controls="heal-your-brain"
-                          >Heal Your Brain</a
-                        >
-                        <a
-                          class="list-group-item list-group-item-action"
-                          id="heal-your-brain"
-                          data-bs-toggle="list"
-                          href="#heal-your-brain"
-                          role="tab"
-                          aria-controls="heal-your-brain"
-                          >Community Service</a
-                        >
-                        <button
-                          type="button"
-                          class="btn btn-warning add-your-own-goal-btn"
-                        >
-                          Add Your Own +
-                        </button>
-                      </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="addGoalModal"
+      tabindex="-1"
+      aria-labelledby="addGoalModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header bg-mainColor">
+            <h2 class="modal-title fs-5" id="addGoalModalLabel">Modal</h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body pick-goal-modal bg-mainColor">
+            <div class="pick-goal-container container-fluid">
+              <div class="row">
+                <div class="col-md-4 modal-nav-col">
+                  <div class="row">
+                    <h2>Pick One</h2>
+                  </div>
+                  <hr class="in-between" />
+                  <div class="row">
+                    <div class="list-group" id="list-tab" role="tablist">
+                      <a
+                        class="list-group-item list-group-item-action"
+                        id="list-home-list"
+                        data-bs-toggle="list"
+                        href="#list-home"
+                        role="tab"
+                        aria-controls="aquire-wealth"
+                        >Aquire Wealth</a
+                      >
+                      <a
+                        class="list-group-item list-group-item-action"
+                        id="list-profile-list"
+                        data-bs-toggle="list"
+                        href="#list-profile"
+                        role="tab"
+                        aria-controls="get-fit"
+                        >Get Fit</a
+                      >
+                      <a
+                        class="list-group-item list-group-item-action"
+                        id="list-messages-list"
+                        data-bs-toggle="list"
+                        href="#list-messages"
+                        role="tab"
+                        aria-controls="eat-healthy"
+                        >Eat Healthy</a
+                      >
+                      <a
+                        class="list-group-item list-group-item-action"
+                        id="inner-peace-list"
+                        data-bs-toggle="list"
+                        href="#inner-peace"
+                        role="tab"
+                        aria-controls="inner-peace"
+                        >Find Inner Peace</a
+                      >
+                      <a
+                        class="list-group-item list-group-item-action"
+                        id="inner-the-boss"
+                        data-bs-toggle="list"
+                        href="#the-boss"
+                        role="tab"
+                        aria-controls="the-boss"
+                        >Work</a
+                      >
+                      <a
+                        class="list-group-item list-group-item-action"
+                        id="inner-the-teacher"
+                        data-bs-toggle="list"
+                        href="#the-teacher"
+                        role="tab"
+                        aria-controls="the-teacher"
+                        >School</a
+                      >
+                      <a
+                        class="list-group-item list-group-item-action"
+                        id="heal-your-brain"
+                        data-bs-toggle="list"
+                        href="#heal-your-brain"
+                        role="tab"
+                        aria-controls="heal-your-brain"
+                        >Heal Your Brain</a
+                      >
+                      <a
+                        class="list-group-item list-group-item-action"
+                        id="heal-your-brain"
+                        data-bs-toggle="list"
+                        href="#heal-your-brain"
+                        role="tab"
+                        aria-controls="heal-your-brain"
+                        >Community Service</a
+                      >
+                      <button
+                        type="button"
+                        class="btn btn-warning add-your-own-goal-btn"
+                      >
+                        Add Your Own +
+                      </button>
                     </div>
                   </div>
-                  <div class="col-md-6 ms-auto">
-                    <div class="row d-flex flex-column align-items-center">
-                      <div class="col-6 d-flex justify-content-center" style="width: 300px;">
-                        <div
+                </div>
+                <div class="col-md-6 ms-auto">
+                  <div class="row d-flex flex-column align-items-center">
+                    <div
+                      class="col-6 d-flex justify-content-center"
+                      style="width: 300px"
+                    >
+                      <div
                         class="row d-flex justify-content-center align-items-center w-100"
                       >
-                        <div class="input-group d-flex justify-content-center flex-nowrap w-100">
-                          <div class="form-outline w-75 d-flex justify-content-center">
+                        <div
+                          class="input-group d-flex justify-content-center flex-nowrap w-100"
+                        >
+                          <div
+                            class="form-outline w-75 d-flex justify-content-center"
+                          >
                             <input
                               id="search-input"
                               type="search"
@@ -260,36 +315,33 @@
                           </button>
                         </div>
                       </div>
-                      </div>
-                      <div
-                        class="col-6 d-flex justify-content-center align-items-center goal-results w-100 h-100"
-                        style="margin-top: 50px;"
-                      >
+                    </div>
+                    <div
+                      class="col-6 d-flex justify-content-center align-items-center goal-results w-100 h-100"
+                      style="margin-top: 50px"
+                    >
                       <h3>
                         results:
                         <span id="goal-category-selction"></span>
                       </h3>
-                    
                     </div>
-                    </div>
-                  
                   </div>
                 </div>
               </div>
-              <div class="container-fluid add-goal-container d-none">
-                Add Goal
-              </div>
             </div>
-            <!-- <div class="modal-footer">
+            <div class="container-fluid add-goal-container d-none">
+              Add Goal
+            </div>
+          </div>
+          <!-- <div class="modal-footer">
             <button type="button" class="btn btn-warning add-your-own-goal-btn">Add Your Own +</button>
           </div> -->
-          </div>
         </div>
       </div>
-  
-<script>
-</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    </div>
+
+    <script></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <script
       src="https://kit.fontawesome.com/19b6f885a9.js"
       crossorigin="anonymous"
@@ -300,7 +352,8 @@
     <script src="/assets/js/components/progressbar.js"></script>
     <script src="/assets/js/colorMode.js"></script>
     <script src="/assets/js/createGoalmodal.js"></script>
-    <script src="/assets/js/timeframe-content.js"></script>
+    <script src="/assets/js/day.js"></script>
+    <script src="/assets/js/calandar.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/scripts.js"></script>
     <script src="/assets/js/dashboard.js"></script>

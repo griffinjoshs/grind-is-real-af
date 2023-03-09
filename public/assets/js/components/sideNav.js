@@ -21,21 +21,22 @@ const displaySideNav = () => {
   sideNavContainers.forEach(container => {
     container.innerHTML = `
       <ul class="nav side-navbar w-100 d-flex justify-content-evenly bg-second flex-nowrap">
-        <li class="sidenav-item nav-item text-mainColor">
-          <a class="nav-link ${window.location.pathname === '/challenges' ? 'active' : ''}" href="/challenges">
-            <h2>
-            <i class="fa-solid fa-person-running"></i>
-            </h2>
-            <h5>
-              Challenges
-            </h5>
-          </a>
-        </li>
+
+      <li class="sidenav-item nav-item text-mainColor">
+      <a class="nav-link ${window.location.pathname === '/goals' ? 'active' : ''}" href="/goals">
+        <h2>
+        <i class="far fa-check-circle"></i>
+        </h2>
+        <h5>
+          Goals
+        </h5>
+      </a>
+    </li>
         
         <li class="sidenav-item nav-item text-mainColor">
           <a class="nav-link ${window.location.pathname.startsWith('/dashboard') ? 'active' : ''}" href="/dashboard/day/">
             <h2>
-              <i class="far fa-check-circle"></i>
+            <i class="fas fa-clipboard"></i>
             </h2>
             <h5>
               Dashboard
@@ -53,28 +54,29 @@ const displaySideNav = () => {
             </h5>
           </a>
         </li>
-    
-        <li class="sidenav-item nav-item text-mainColor">
-          <a class="nav-link ${window.location.pathname === '/stats' ? 'active' : ''}" href="/stats">
-            <h2>
-              <i class="fas fa-chart-pie"></i>
-            </h2>
-            <h5>
-              Stats
-            </h5>
-          </a>
-        </li>
 
         <li class="sidenav-item nav-item text-mainColor">
-          <a class="nav-link ${window.location.pathname === '/rewards' ? 'active' : ''}" href="/rewards">
-            <h2>
-              <i class="fa-solid fa-trophy"></i>
-            </h2>
-            <h5>
-             Rewards
-            </h5>
-          </a>
-        </li>
+        <a class="nav-link ${window.location.pathname === '/rewards' ? 'active' : ''}" href="/rewards">
+          <h2>
+            <i class="fa-solid fa-trophy"></i>
+          </h2>
+          <h5>
+           Rewards
+          </h5>
+        </a>
+      </li>
+    
+        <li class="sidenav-item nav-item text-mainColor">
+        <a class="nav-link ${window.location.pathname === '/challenges' ? 'active' : ''}" href="/challenges">
+          <h2>
+          <i class="fa-solid fa-person-running"></i>
+          </h2>
+          <h5>
+            Challenges
+          </h5>
+        </a>
+      </li>
+
       </ul>
     `;
   });

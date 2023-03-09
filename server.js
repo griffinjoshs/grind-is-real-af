@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 app.use('/dashboard', require('./serverFiles/routes/dashboard.routes'));
 app.use('/journal', require('./serverFiles/routes/journal.routes'));
 app.use('/challenges', require('./serverFiles/routes/challenges.routes'));
-app.use('/stats', require('./serverFiles/routes/stats.routes'));
+app.use('/goals', require('./serverFiles/routes/goals.routes'));
 app.use('/rewards', require('./serverFiles/routes/rewards.routes'));
 
 // Start the server

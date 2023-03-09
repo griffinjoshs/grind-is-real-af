@@ -21,7 +21,7 @@ function createCoinCount(count, width, minWidth, height, fontSize) {
     return coinCount;
   }
   
-  document.querySelector('.total-coin-count').appendChild(createCoinCount(650, '140px', '0', '50px', '2rem'));
+  document.querySelector('.total-coin-count').appendChild(createCoinCount(195, '0', '100px', "35px", "1.4rem"));
   
   document.querySelector('.timeframe-coin-count').appendChild(createCoinCount(15, '0', '100px', "35px", "1.4rem"));
   

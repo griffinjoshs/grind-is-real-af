@@ -22,7 +22,7 @@ function createNavbar(userInfo) {
             </div>
             <div>
               <div class="username h4">
-                <h3 class="px-2 text-dark">@${username}</h3>
+                <h3 class="px-2 text-light">@${username}</h3>
               </div>
               <div id="level-progress"></div>
 

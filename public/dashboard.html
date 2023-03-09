@@ -178,7 +178,7 @@
       </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Add Goal Modal 1 -->
     <div
       class="modal fade"
       id="addGoalModal"
@@ -207,81 +207,13 @@
                   <hr class="in-between" />
                   <div class="row">
                     <div class="list-group" id="list-tab" role="tablist">
-                      <a
-                        class="list-group-item list-group-item-action"
-                        id="list-home-list"
-                        data-bs-toggle="list"
-                        href="#list-home"
-                        role="tab"
-                        aria-controls="aquire-wealth"
-                        >Aquire Wealth</a
-                      >
-                      <a
-                        class="list-group-item list-group-item-action"
-                        id="list-profile-list"
-                        data-bs-toggle="list"
-                        href="#list-profile"
-                        role="tab"
-                        aria-controls="get-fit"
-                        >Get Fit</a
-                      >
-                      <a
-                        class="list-group-item list-group-item-action"
-                        id="list-messages-list"
-                        data-bs-toggle="list"
-                        href="#list-messages"
-                        role="tab"
-                        aria-controls="eat-healthy"
-                        >Eat Healthy</a
-                      >
-                      <a
-                        class="list-group-item list-group-item-action"
-                        id="inner-peace-list"
-                        data-bs-toggle="list"
-                        href="#inner-peace"
-                        role="tab"
-                        aria-controls="inner-peace"
-                        >Find Inner Peace</a
-                      >
-                      <a
-                        class="list-group-item list-group-item-action"
-                        id="inner-the-boss"
-                        data-bs-toggle="list"
-                        href="#the-boss"
-                        role="tab"
-                        aria-controls="the-boss"
-                        >Work</a
-                      >
-                      <a
-                        class="list-group-item list-group-item-action"
-                        id="inner-the-teacher"
-                        data-bs-toggle="list"
-                        href="#the-teacher"
-                        role="tab"
-                        aria-controls="the-teacher"
-                        >School</a
-                      >
-                      <a
-                        class="list-group-item list-group-item-action"
-                        id="heal-your-brain"
-                        data-bs-toggle="list"
-                        href="#heal-your-brain"
-                        role="tab"
-                        aria-controls="heal-your-brain"
-                        >Heal Your Brain</a
-                      >
-                      <a
-                        class="list-group-item list-group-item-action"
-                        id="heal-your-brain"
-                        data-bs-toggle="list"
-                        href="#heal-your-brain"
-                        role="tab"
-                        aria-controls="heal-your-brain"
-                        >Community Service</a
-                      >
+                      <div id="categories">
+
+                      </div>
                       <button
                         type="button"
                         class="btn btn-warning add-your-own-goal-btn"
+                        disabled
                       >
                         Add Your Own +
                       </button>
@@ -324,10 +256,7 @@
                       class="col-6 d-flex justify-content-center align-items-center goal-results w-100 h-100"
                       style="margin-top: 50px"
                     >
-                      <h3>
-                        results:
-                        <span id="goal-category-selction"></span>
-                      </h3>
+                        <ul id="goal-category-selction"></ul>
                     </div>
                   </div>
                 </div>
@@ -343,6 +272,24 @@
         </div>
       </div>
     </div>
+<!-- Add Goal Modal 2 -->
+<div class="modal added-goal-settings" tabindex="-1" id="addedGoalSettings">
+  <!-- <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div> -->
+</div>
 
     <script></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>

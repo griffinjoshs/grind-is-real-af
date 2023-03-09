@@ -63,6 +63,71 @@
     border-radius: 39px;        
   }
 
+  /* calandar */
+.calendar .view {
+    margin-top: 20px;
+  }
+  
+  .calendar .change-view {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .calendar table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .calendar th {
+    padding: 10px;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .calendar td {
+    min-height: 50px;
+    /* padding: 10px; */
+    text-align: center;
+    border: none;
+  }
+  
+  .calendar .day-cell {
+    /* background-color: aqua; */
+    padding: 20px;
+    border: #007bff solid 1px;
+    /* padding: 80px 0; */
+  }
+  
+  .calendar a {
+    /* color: black; */
+    text-decoration: none;
+  }
+  
+  .calendar a:hover {
+    filter: invert(100);
+  }
+  
+  .calendar .active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .calendar button {
+    margin-right: 10px;
+  }
+  
+  .calendar .prev-month,
+  .calendar .next-month {
+    opacity: 0.5;
+  }
+  
+  .calendar .today {
+    /* background-color: var(--success-color); */
+    background-color: #007bff;
+    color: #fff;
+  }  
+
   /* modal */
   .pick-goal-modal {
     padding: 20px 0;
@@ -104,3 +169,12 @@
 .add-your-own-goal-btn {
     margin: 15px 0;
 }
+
+#goal-category-selction {
+    list-style: none;
+  }
+  
+  .goal-list-item {
+    width: 100%;
+    font-size: 30px;
+  }

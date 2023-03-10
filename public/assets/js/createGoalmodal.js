@@ -53,47 +53,47 @@ const goals = [
   {
     goal: "Workout",
     categories: ["Get Fit", "Work"],
-    recommendedTasks: '',
+    recommendedTasks: ['upper-body day', 'lowe body day', 'leg day', 'shoulder day', 'back and biceps', 'chest day', 'quad day', 'hamstring day'],
   },
   {
     goal: "Meditate",
     categories: ["Find Inner Peace"],
-    recommendedTasks: '',
+    recommendedTasks: [],
   },
   {
     goal: "Read",
     categories: ["Work", "Find Inner Peace"],
-    recommendedTasks: '',
+    recommendedTasks: [],
   },
   {
     goal: "Volunteer",
     categories: ["Community Service"],
-    recommendedTasks: '',
+    recommendedTasks: [],
   },
   {
     goal: "Cook healthy meals",
     categories: ["Eat Healthy"],
-    recommendedTasks: '',
+    recommendedTasks: [],
   },
   {
     goal: "Save money",
     categories: ["Aquire Wealth"],
-    recommendedTasks: '',
+    recommendedTasks: [],
   },
   {
     goal: "Get organized",
     categories: ["Work", "School"],
-    recommendedTasks: '',
+    recommendedTasks: [],
   },
   {
     goal: "Learn a new skill",
     categories: ["Work", "School"],
-    recommendedTasks: '',
+    recommendedTasks: [],
   },
   {
     goal: "Spend time with family/friends",
     categories: ["Find Inner Peace"],
-    recommendedTasks: '',
+    recommendedTasks: [],
   },
 ];
 
@@ -134,7 +134,8 @@ function displayGoals(categoryText) {
     ${goal.goal}
     </button>
     </li>`;
-    generateGoalSettingsModal(goal.goal);
+    // console.log(goal)
+    generateGoalSettingsModal(goal);
   });
   goalCategorySelection.innerHTML = goalList;
 }
@@ -142,10 +143,10 @@ function displayGoals(categoryText) {
 function generateGoalSettingsModal(goal) {
   const modalContent = document.getElementById("addedGoalSettings");
   modalContent.innerHTML = `
-    <div class="modal-dialog">
+    <div class="modal-dialog ">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Selected Goal: ${goal}</h5>
+          <h5 class="modal-title">Selected Goal: ${goal.goal}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -167,10 +168,11 @@ function generateGoalSettingsModal(goal) {
               <option value='5'>5</option>
             </select>
           </div>
-          <div class='task-titles'>
+          <div class='task-titles hide'>
           </div>
         </div>
         <div class="modal-footer">
+        Selected Goal: ${goal.goal}
           <button type="button" class="btn btn-success">Add Goal to Plan</button>
         </div>
       </div>
@@ -178,7 +180,6 @@ function generateGoalSettingsModal(goal) {
   `;
 
   const howLongGoalSelect = modalContent.querySelector(".how-long-goal");
-const taskTitlesDiv = modalContent.querySelector(".task-titles");
 
   howLongGoalSelect.addEventListener("change", () => {
     const selectedValue = howLongGoalSelect.value;
@@ -229,28 +230,167 @@ const taskTitlesDiv = modalContent.querySelector(".task-titles");
     }
 
     const howManyXWeekSelect = modalContent.querySelector("#howmanyxweek");
+const taskTitlesDiv = modalContent.querySelector(".task-titles");
 
-if (selectedValue === "weeks" || "months") {
-  // howManyXWeekSelect.parentNode.classList.add("hide");
+if (selectedValue === "weeks" || selectedValue === "months") {
   howManyXWeekSelect.parentNode.classList.remove("hide");
+  taskTitlesDiv.classList.remove('hide')
 } else {
   howManyXWeekSelect.parentNode.classList.add("hide");
+  taskTitlesDiv.classList.add('hide')
 }
+
 
 howManyXWeekSelect.addEventListener("change", changeTasksTitles)
 
-function changeTasksTitles () {
+goal.recommendedTasks.forEach((task) => {
+console.log(task)
+})
+
+
+function changeTasksTitles() {
   taskTitlesDiv.innerHTML = "";
-const selectedValue = howManyXWeekSelect.value;
-for (let i = 0; i < selectedValue; i++) {
-  const input = document.createElement("input");
-  input.classList.add("form-control", "mb-3");
-  input.type = "text";
-  input.placeholder = `Task ${i + 1} Title`;
-  taskTitlesDiv.appendChild(input);
+  const selectedValue = howManyXWeekSelect.value;
+  const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  for (let i = 0; i < selectedValue; i++) {    
+    const select = document.createElement("select");
+    select.classList.add("form-select", "mb-3");
+    select.name = `Task ${i + 1}`;
+
+    // Create default option element
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.text = "Select Task";
+    select.appendChild(defaultOption);
+
+    // Create option elements for each recommended task
+    goal.recommendedTasks.forEach((task) => {
+      const option = document.createElement("option");
+      option.value = task;
+      option.text = task;
+      select.appendChild(option);
+    });
+
+    // Create day of week selector
+    const daySelect = document.createElement("select");
+    daySelect.classList.add("form-select", "mb-3");
+    daySelect.name = `Day of Week ${i + 1}`;
+
+    // Create default option element
+    const defaultDayOption = document.createElement("option");
+    defaultDayOption.value = "";
+    defaultDayOption.text = "Select Day of Week";
+    daySelect.appendChild(defaultDayOption);
+
+    // Create option elements for each day of the week
+    daysOfWeek.forEach((day) => {
+      const option = document.createElement("option");
+      option.value = day;
+      option.text = day;
+      daySelect.appendChild(option);
+    });
+
+    // Create time input field
+    const timeInput = document.createElement("input");
+    timeInput.classList.add("form-control", "mb-3");
+    timeInput.type = "time";
+    timeInput.name = `Time ${i + 1}`;
+
+    // Create div to hold select fields
+    const selectDiv = document.createElement("div");
+    selectDiv.classList.add("d-flex", "justify-content-between", "mb-3");
+    selectDiv.appendChild(select);
+    selectDiv.appendChild(daySelect);
+    selectDiv.appendChild(timeInput);
+
+    taskTitlesDiv.appendChild(selectDiv);
+  }
 }
+
+function changeTasksTitles() {
+  taskTitlesDiv.innerHTML = "";
+  const selectedValue = howManyXWeekSelect.value;
+  const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  for (let i = 0; i < selectedValue; i++) {    
+    const select = document.createElement("select");
+    select.classList.add("form-select", "mb-3");
+    select.name = `Task ${i + 1}`;
+
+    // Create default option element
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.text = "Select Task";
+    select.appendChild(defaultOption);
+
+    // Create option elements for each recommended task
+    goal.recommendedTasks.forEach((task) => {
+      const option = document.createElement("option");
+      option.value = task;
+      option.text = task;
+      select.appendChild(option);
+    });
+
+    // Create custom task option element
+    const customTaskOption = document.createElement("option");
+    customTaskOption.value = "Custom Task";
+    customTaskOption.text = "Custom Task";
+    select.appendChild(customTaskOption);
+
+    // Create day of week selector
+    const daySelect = document.createElement("select");
+    daySelect.classList.add("form-select", "mb-3");
+    daySelect.name = `Day of Week ${i + 1}`;
+
+    // Create default option element
+    const defaultDayOption = document.createElement("option");
+    defaultDayOption.value = "";
+    defaultDayOption.text = "Select Day of Week";
+    daySelect.appendChild(defaultDayOption);
+
+    // Create option elements for each day of the week
+    daysOfWeek.forEach((day) => {
+      const option = document.createElement("option");
+      option.value = day;
+      option.text = day;
+      daySelect.appendChild(option);
+    });
+
+    // Create task input field
+    const taskInput = document.createElement("input");
+    taskInput.classList.add("form-control", "mb-3", "d-none"); // Hide the task input field by default
+    taskInput.type = "text";
+    taskInput.name = `Task ${i + 1}`;
+
+    // Show the task input field when "Custom Task" is selected
+    select.addEventListener("change", () => {
+      if (select.value === "Custom Task") {
+        select.classList.add("d-none");
+        taskInput.classList.remove("d-none");
+      } else {
+        select.classList.remove("d-none");
+        taskInput.classList.add("d-none");
+      }
+    });
+
+    // Create time input field
+    const timeInput = document.createElement("input");
+    timeInput.classList.add("form-control", "mb-3");
+    timeInput.type = "time";
+    timeInput.name = `Time ${i + 1}`;
+
+    // Create div to hold select fields
+    const selectDiv = document.createElement("div");
+    selectDiv.classList.add("d-flex", "justify-content-between", "mb-3");
+    selectDiv.appendChild(select);
+    selectDiv.appendChild(taskInput);
+    selectDiv.appendChild(daySelect);
+    selectDiv.appendChild(timeInput);
+
+    taskTitlesDiv.appendChild(selectDiv);
+  }
 }
-  })}
+
+  })}              
 
 function showCategories(categories) {
   categories.forEach((category) => {

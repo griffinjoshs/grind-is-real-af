@@ -145,6 +145,7 @@ function generateGoalSettingsModal(goal) {
   modalContent.innerHTML = `
     <div class="modal-dialog ">
       <div class="modal-content">
+      <form>
         <div class="modal-header">
           <h5 class="modal-title">Selected Goal: ${goal.goal}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -173,8 +174,9 @@ function generateGoalSettingsModal(goal) {
         </div>
         <div class="modal-footer">
         Selected Goal: ${goal.goal}
-          <button type="button" class="btn btn-success">Add Goal to Plan</button>
+          <button type="submit" class="btn btn-success" id='addGoalSubmit'>Add Goal to Plan</button>
         </div>
+        </form>
       </div>
     </div>
   `;
@@ -247,6 +249,33 @@ goal.recommendedTasks.forEach((task) => {
 console.log(task)
 })
 
+const addGoalSubmit = document.getElementById("addGoalSubmit");
+addGoalSubmit.addEventListener("click", (e) => {
+  e.preventDefault();
+  const durationSelect = document.querySelector(".how-long-duration");
+  const durationValue = durationSelect.value;
+  const durationText = durationSelect.options[durationSelect.selectedIndex].text;
+  const timeFrameSelect = document.querySelector(".how-long-goal");
+  const timeFrameValue = timeFrameSelect.value;
+  const timeFrameText = timeFrameSelect.options[timeFrameSelect.selectedIndex].text;
+  const taskDivs = document.querySelectorAll(".task-titles > div");
+  const tasks = [];
+
+  taskDivs.forEach((taskDiv) => {
+    const taskSelect = taskDiv.querySelector("select");
+    const taskInput = taskDiv.querySelector("input");
+    const daySelect = taskDiv.querySelectorAll("select")[1];
+    const timeInput = taskDiv.querySelector("input[type=time]");
+    const task = {
+      task: taskSelect.value === "Custom Task" ? taskInput.value : taskSelect.value,
+      day: daySelect.value,
+      time: timeInput.value,
+    };
+    tasks.push(task);
+  });
+
+  console.log(`How Long: ${durationValue} (${timeFrameText})`, tasks);
+});
 
 function changeTasksTitles() {
   taskTitlesDiv.innerHTML = "";
